@@ -25,8 +25,8 @@ def caesar_cipher(input_string = '', key = 0)
           break
         end
       end
-    elsif char == " "
-      encrypted_string.push(" ")
+    else
+      encrypted_string.push(char)
     end
   end
 
@@ -34,4 +34,4 @@ def caesar_cipher(input_string = '', key = 0)
   p encrypted_string.join
 end
 
-caesar_cipher('Zabc m', 2)
+caesar_cipher('What a string!', 5)
