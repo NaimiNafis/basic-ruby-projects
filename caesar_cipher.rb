@@ -1,6 +1,7 @@
 require 'pry-byebug'
 
 def caesar_cipher(input_string = '', key = 0)
+
   string = input_string.split('')
 
   alphabet_lower = 'abcdefghijklmnopqrstuvwxyz'.split("")
@@ -30,8 +31,8 @@ def caesar_cipher(input_string = '', key = 0)
     end
   end
 
-
   p encrypted_string.join
+
 end
 
 caesar_cipher('What a string!', 5)
