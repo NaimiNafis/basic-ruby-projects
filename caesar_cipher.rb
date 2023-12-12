@@ -12,16 +12,20 @@ def caesar_cipher(input_string = '', key = 0)
   shifted_string = []
 
   string.each do |character|
-    alphabet_lower.each_with_index do |alphabet_char, index|
-      if character == alphabet_char
-        alphabet_indices.push(index)
-        break
+    if character == " "
+      alphabet_indices.push(0)
+    else
+      alphabet_lower.each_with_index do |alphabet_char, index|
+        if character == alphabet_char
+          alphabet_indices.push(index)
+          break
+        end
       end
-    end
-    alphabet_upper.each_with_index do |alphabet_char, index|
-      if character == alphabet_char
-        alphabet_indices.push(index)
-        break
+      alphabet_upper.each_with_index do |alphabet_char, index|
+        if character == alphabet_char
+          alphabet_indices.push(index)
+          break
+        end
       end
     end
   end
@@ -29,7 +33,10 @@ def caesar_cipher(input_string = '', key = 0)
   binding.pry
 
   shifted_indices = alphabet_indices.map do |index|
-    (index + key) % alphabet_lower.length
+    if index == 0
+      index
+    else
+      (index + key) % alphabet_lower.length
   end
 
   binding.pry
