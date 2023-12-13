@@ -17,7 +17,7 @@ def stock_picker(array)
     if profit > max_profit
       max_profit = profit
       buy_day = min_day
-      sell_day = today
+      sell_day = today # this is important to make sure sell_day > buy_day
     end
   end
 
@@ -26,3 +26,4 @@ def stock_picker(array)
 end
 
 stock_picker([17,3,6,9,15,8,6,1,10])
+#  => [1,4] for a profit of $15 - $3 == $12
